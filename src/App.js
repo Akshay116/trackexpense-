@@ -1,9 +1,8 @@
+import React,{useState} from 'react';
 import Expenses from './Components/Expenses/Expenses';
 import NewExpense from './Components/NewExpense/NewExpense';
 
-
-function App() {
-  const expenses = [
+const DUMMY_DATA = [
     { 
       id: 'a1',
       title:  'mobile1',
@@ -32,9 +31,16 @@ function App() {
 
   ];
 
+
+
+const  App = () => {
+  const [expenses,setExpenses] = useState(DUMMY_DATA);
+ 
   const addExpenseHandler = expense =>{
-        console.log('in app');
-        console.log(expense);
+       setExpenses((prevExpenses) =>{
+         return [expense, ...prevExpenses];
+
+       });
   };
   return (
     <div className="App">
