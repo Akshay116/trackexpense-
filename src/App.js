@@ -32,9 +32,9 @@ function App() {
 
   ];
 
-  const addExpenseHandler = (expense) =>{
+  const addExpenseHandler = expense =>{
         console.log('in app');
-        console.log(expenses);
+        console.log(expense);
   };
   return (
     <div className="App">
